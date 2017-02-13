@@ -10,6 +10,7 @@
 <%= form_for( [@post, Comment.new] , remote: true) do |f| %> 
   <p>
     <%= f.label :body, "New Comment" %><br>
+    <%= f.hidden_field :post_id,  :value => @post.id%>
     <%= f.text_area :body %>    
   </p>
   <p><%= f.submit "Add Comment" %></p>
